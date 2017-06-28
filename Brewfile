@@ -16,6 +16,7 @@ brew 'yarn'
 brew 'youtube-dl'
 
 cask 'firefox'
+cask 'flux'
 cask 'google-chrome'
 cask 'slack'
 cask 'transmission'
