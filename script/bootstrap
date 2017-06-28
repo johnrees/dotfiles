@@ -152,5 +152,7 @@ then
   fi
 fi
 
+sudo chown -R $USER:$(id -gn $USER) ~/.config 
+
 echo ''
 echo '  All installed!'
