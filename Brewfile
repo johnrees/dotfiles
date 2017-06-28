@@ -15,6 +15,7 @@ brew 'wget'
 brew 'yarn'
 brew 'youtube-dl'
 
+cask 'appcleaner'
 cask 'firefox'
 cask 'flux'
 cask 'google-chrome'
