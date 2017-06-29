@@ -1,5 +1,0 @@
-#!/bin/sh
-
-dir=${1:-.}
-repo=$(cd $dir && git config remote.origin.url)
-open x-github-client://openRepo/${repo}
