@@ -7,6 +7,41 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
+# Show volume in the menu bar
+# defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -int 0
+
+# Show Bluetooth in the menu bar
+# defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -int 1
+
+# Use plain text for new documents in TextEdit.app
+# defaults write com.apple.TextEdit RichText -bool false
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# New Finder windows points to home
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Use current directory as default search scope in Finder
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Allow tap to click for Apple trackpad devices
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+# Don't want Photos.app to open up as soon as you plug something in?
+defaults write com.apple.ImageCapture disableHotPlug -bool YES
+
+# Enable scroll gesture (with modifier) to zoom
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true 
+
 # Dark menu bar and dock
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
@@ -22,11 +57,20 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 # Always open everything in Finder's list view. This is important.
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
+# Expand save panel by default.
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Expand print panel by default.
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
-# Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 1
+# Set keyboard repeat rate to "damn fast".
+defaults write NSGlobalDomain KeyRepeat -int 2
+
+# Set a shorter delay until key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Set the Finder prefs for showing a few different volumes on the Desktop.
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -103,6 +147,10 @@ defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 defaults write org.m0k.transmission WarningDonate -bool false
 # Hide the legal disclaimer
 defaults write org.m0k.transmission WarningLegal -bool false
+
+# Disable the new window animation - every new window grows
+# from a small one to a big one over a few hundred millisecs
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 killall Finder
 killall Dock
