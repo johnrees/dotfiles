@@ -49,7 +49,7 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 defaults write com.apple.Dock orientation -string "left"
 
 # Disable press-and-hold for keys in favor of key repeat.
-defaults write -g ApplePressAndHoldEnabled -bool true
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
