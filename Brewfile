@@ -17,6 +17,7 @@ brew "openssl"
 brew "ruby-build"
 brew "rbenv"
 brew "readline"
+brew "reattach-to-user-namespace" # needed for tmux
 brew "svgo"
 brew "tmux"
 brew "unrar"
