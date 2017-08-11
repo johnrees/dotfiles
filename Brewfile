@@ -24,6 +24,7 @@ brew "postgrest"
 brew "rbenv"
 brew "readline"
 brew "reattach-to-user-namespace" # needed for tmux
+brew "redis"
 brew "ruby-build"
 brew "svgo"
 brew "tmux"
