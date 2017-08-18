@@ -35,6 +35,7 @@ brew "yarn"
 brew "youtube-dl"
 
 cask "appcleaner"
+cask "duet"
 cask "firefox"
 cask "flux"
 cask "google-chrome"
