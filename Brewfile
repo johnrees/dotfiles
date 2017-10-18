@@ -50,6 +50,7 @@ cask "rhinoceros"
 cask "sketch"
 cask "sketchup"
 cask "slack"
+cask "soda-player"
 cask "steam"
 cask "sublime-text"
 cask "telegram"
@@ -61,4 +62,6 @@ cask "whatsapp"
 
 mas "Coin Tick", id: 1141688067
 mas "DaisyDisk", id: 411643860
+mas "The Unarchiver", id: 425424353
 mas "Wunderlist", id: 410628904
+
