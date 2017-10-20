@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Colorsublime - Themes/candy-crush.tmTheme",
+	"color_scheme": "Packages/Colorsublime - Themes/Monokai-Soft.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
@@ -38,13 +38,15 @@
 		"deps",
 		"ignore"
 	],
-	"font_size": 14,
+	"font_face": "Fira Code",
+	"font_size": 15,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
 	"show_minimap": false,
 	"tab_size": 2,
+	"theme": "Soda Dark 3.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
