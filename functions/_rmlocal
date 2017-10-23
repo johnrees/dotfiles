@@ -1,0 +1,4 @@
+#compdef rmlocal
+_path_files -W '/Users/john/Library/Mobile Documents/com\~apple\~CloudDocs'
+
+# See further documentation in `functions/rmlocal`.
