@@ -1,0 +1,4 @@
+#compdef i
+_files -W $ICLOUD -/
+
+# See further documentation in `functions/i`.
