@@ -1,4 +1,37 @@
+" sort out colours
+
 syntax on
+set t_Co=256
+set background=dark
+" colorscheme ???
 
 " Wrap gitcommit file types at the appropriate length
+
 filetype indent plugin on
+
+set tabstop=2 " width of tab is 2. Still a \t though
+set shiftwidth=2 " indents have width of 2
+set softtabstop=2 " number of columns for a tab
+set expandtab 
+
+" vim plug
+
+call plug#begin('~/.vim/plugged')
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+call plug#end()
+
+" syntastic configuration
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
