@@ -1,37 +1,71 @@
-" sort out colours
 
+" set nocompatible
 syntax on
+filetype indent plugin on
+
+" sort out colours
 set t_Co=256
 set background=dark
 " colorscheme ???
 
+set backspace=2
 " Wrap gitcommit file types at the appropriate length
 
-filetype indent plugin on
+" Use netrw tree-view (like NERDtree)
+let g:netrw_liststyle = 3
 
-set tabstop=2 " width of tab is 2. Still a \t though
-set shiftwidth=2 " indents have width of 2
-set softtabstop=2 " number of columns for a tab
-set expandtab 
+" hide banner
+let g:netrw_banner = 0
+
+" use two spaces rather than tabs
+set ts=2 sts=2 sw=2 expandtab
 
 " vim plug
 
 call plug#begin('~/.vim/plugged')
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'scrooloose/syntastic'
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+Plug 'tpope/vim-projectionist'
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'scrooloose/syntastic'
+" Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 call plug#end()
 
 " syntastic configuration
+
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+set path+=**
+set wildmenu
 
+command! MakeTags !ctags -R .
+
+:imap jk <Esc>
+
+" disable continuation of comments on newline
+:set formatoptions-=cro
+
+" trim whitespace on save
+function! <SID>StripTrailingWhitespace()
+  "prep: save last search and cursor position
+  let _s=@\
+  let l = line(".")
+  let c = col(".")
+  " do the business
+  %s/\s\+$//e
+  " clean up: resore prev search history & cursor pos
+  let @/=_s
+  call cursor(l, c)
+endfunction
+if has("autocmd")
+  autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
+endif
+
+" hidden buffers (http://vimcasts.org/episodes/working-with-buffers/)
+set hidden
