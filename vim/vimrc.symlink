@@ -1,8 +1,18 @@
+set encoding=utf-8
 
 " set nocompatible
 syntax on
 filetype indent plugin on
 
+set ttyfast
+set lazyredraw
+set nu ""
+set showcmd
+
+highlight LineNr ctermfg=darkgrey
+set numberwidth=4
+
+set clipboard=unnamed " use macOS clipboard
 " sort out colours
 set t_Co=256
 set background=dark
@@ -46,7 +56,7 @@ set wildmenu
 
 command! MakeTags !ctags -R .
 
-:imap jk <Esc>
+inoremap jk <Esc>
 
 " disable continuation of comments on newline
 :set formatoptions-=cro
