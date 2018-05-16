@@ -1,3 +1,5 @@
+alias brupgrade="brew update && brew upgrade `brew outdated` && brew cleanup && brew prune && brew doctor"
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
@@ -50,4 +52,17 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-export PATH=./node_modules/.bin:$PATH
+export HOMEBREW_GITHUB_API_TOKEN="87a4097a539761d5f5f0716c188390852b58d9ee"
+
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# export PATH=/Users/john/.local/bin/luna-studio:$PATH
+# export PATH="$PATH:/usr/local/Cellar/yarn/1.3.2/bin"
+export PATH="$PATH:node_modules/.bin"
+
+eval "$(direnv hook zsh)"

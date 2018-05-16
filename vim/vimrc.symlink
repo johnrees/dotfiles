@@ -8,6 +8,7 @@ set ttyfast
 set lazyredraw
 set nu ""
 set showcmd
+set guifont=Monoid
 
 highlight LineNr ctermfg=darkgrey
 set numberwidth=4
@@ -36,7 +37,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-projectionist'
-" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Plug 'scrooloose/syntastic'
 " Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 call plug#end()
@@ -47,9 +48,9 @@ call plug#end()
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 set path+=**
 set wildmenu
